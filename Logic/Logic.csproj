@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AdmissionBLL.cs" />
+    <Compile Include="BLL\DischargeBLL.cs" />
+    <Compile Include="BLL\DoctorBLL.cs" />
+    <Compile Include="BLL\PatientBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

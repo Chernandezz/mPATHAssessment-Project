@@ -64,6 +64,9 @@ namespace Data.DAL
             long id = 0;
             using (var db = DbConnection.Create())
             {
+                item.deleted = false;
+                db.Doctor.Add(item);
+                db.SaveChanges();
 
             }
             return id;
@@ -72,13 +75,29 @@ namespace Data.DAL
         public static void Update(DoctorVMR item) {
             using (var db = DbConnection.Create())
             {
+                var itemUpdate = db.Doctor.Find(item.id);
+
+                itemUpdate.firstName = item.firstName;
+                itemUpdate.lastName = item.lastName;
+                itemUpdate.email = item.email;
+                itemUpdate.active = item.active;
+
+                db.Entry(itemUpdate).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
 
             }
         }
         public static void Delete(List<long> ids) {
             using (var db = DbConnection.Create())
             {
+                var items = db.Doctor.Where(x => ids.Contains(x.id));
 
+                foreach (var item in items) 
+                {
+                    item.deleted = true;
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                }
+                db.SaveChanges();
             }
         }
     }
