@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\crist\\Music\\mPath Assessment Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|c:\\users\\crist\\music\\mpath assessment project\\model\\metadata\\discharge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|solutionrelative:model\\metadata\\discharge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|c:\\users\\crist\\music\\mpath assessment project\\model\\metadata\\admission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|solutionrelative:model\\metadata\\admission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|c:\\users\\crist\\music\\mpath assessment project\\model\\metadata\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|solutionrelative:model\\metadata\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|c:\\users\\crist\\music\\mpath assessment project\\model\\metadata\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|solutionrelative:model\\metadata\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|c:\\users\\crist\\music\\mpath assessment project\\model\\context\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F7E8E92-4E57-4F02-8C56-9DB8734844AB}|Model\\Model.csproj|solutionrelative:model\\context\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Discharge.cs",
+              "DocumentMoniker": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Discharge.cs",
+              "RelativeDocumentMoniker": "Model\\MetaData\\Discharge.cs",
+              "ToolTip": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Discharge.cs",
+              "RelativeToolTip": "Model\\MetaData\\Discharge.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T18:06:38.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admission.cs",
+              "DocumentMoniker": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Admission.cs",
+              "RelativeDocumentMoniker": "Model\\MetaData\\Admission.cs",
+              "ToolTip": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Admission.cs",
+              "RelativeToolTip": "Model\\MetaData\\Admission.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T18:06:26.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Patient.cs",
+              "RelativeDocumentMoniker": "Model\\MetaData\\Patient.cs",
+              "ToolTip": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Patient.cs",
+              "RelativeToolTip": "Model\\MetaData\\Patient.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T18:05:55.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Doctor.cs",
+              "RelativeDocumentMoniker": "Model\\MetaData\\Doctor.cs",
+              "ToolTip": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\MetaData\\Doctor.cs",
+              "RelativeToolTip": "Model\\MetaData\\Doctor.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T18:05:47.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DbConnection.cs",
               "DocumentMoniker": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\Context\\DbConnection.cs",
               "RelativeDocumentMoniker": "Model\\Context\\DbConnection.cs",
               "ToolTip": "C:\\Users\\crist\\Music\\mPath Assessment Project\\Model\\Context\\DbConnection.cs",
               "RelativeToolTip": "Model\\Context\\DbConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-23T14:10:58.248Z",
               "EditorCaption": ""

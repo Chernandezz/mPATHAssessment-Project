@@ -54,6 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DbConnection.cs" />
+    <Compile Include="MetaData\Admission.cs" />
+    <Compile Include="MetaData\Discharge.cs" />
+    <Compile Include="MetaData\Doctor.cs" />
+    <Compile Include="MetaData\Patient.cs" />
     <Compile Include="Models\Admission.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
