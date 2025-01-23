@@ -1,0 +1,11 @@
+C:\Users\crist\Music\mPath Assessment Project\Data\bin\Debug\Data.dll
+C:\Users\crist\Music\mPath Assessment Project\Data\bin\Debug\Data.pdb
+C:\Users\crist\Music\mPath Assessment Project\Data\bin\Debug\Common.dll
+C:\Users\crist\Music\mPath Assessment Project\Data\bin\Debug\Model.dll
+C:\Users\crist\Music\mPath Assessment Project\Data\bin\Debug\Common.pdb
+C:\Users\crist\Music\mPath Assessment Project\Data\bin\Debug\Model.pdb
+C:\Users\crist\Music\mPath Assessment Project\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\crist\Music\mPath Assessment Project\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\crist\Music\mPath Assessment Project\Data\obj\Debug\Data.csproj.Up2Date
+C:\Users\crist\Music\mPath Assessment Project\Data\obj\Debug\Data.dll
+C:\Users\crist\Music\mPath Assessment Project\Data\obj\Debug\Data.pdb

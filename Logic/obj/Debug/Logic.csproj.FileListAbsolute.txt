@@ -1,0 +1,15 @@
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Logic.dll
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Logic.pdb
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Common.dll
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Data.dll
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Model.dll
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Rest.dll
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Common.pdb
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Data.pdb
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Model.pdb
+C:\Users\crist\Music\mPath Assessment Project\Logic\bin\Debug\Rest.pdb
+C:\Users\crist\Music\mPath Assessment Project\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+C:\Users\crist\Music\mPath Assessment Project\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\crist\Music\mPath Assessment Project\Logic\obj\Debug\Logic.csproj.Up2Date
+C:\Users\crist\Music\mPath Assessment Project\Logic\obj\Debug\Logic.dll
+C:\Users\crist\Music\mPath Assessment Project\Logic\obj\Debug\Logic.pdb
