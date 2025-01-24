@@ -20,4 +20,15 @@ export class HttpService{
     params = params.append('searchText', searchText)
     return this.httpClient.get('http://localhost:54756/api/Doctor', {params: params});
   }
+
+  Delete(ids: number[]){
+    const option = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      body: ids
+    };
+
+    return this.httpClient.delete('http://localhost:54756/api/Doctor', option);
+  }
 }

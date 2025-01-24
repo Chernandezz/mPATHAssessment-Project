@@ -28,24 +28,41 @@ export class IndexComponent implements OnInit {
 
   searchText = '';
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.GetAll();
   }
 
   GetAll() {
-    this.httpService.GetAll(this.pageCount, this.pageNumber, this.searchText).subscribe((response: any) => {
-      console.log(response);
-      this.dataSource.data = response.data.element;
-      this.totalCount = response.data.totalCount;
-    });
+    this.httpService
+      .GetAll(this.pageCount, this.pageNumber, this.searchText)
+      .subscribe((response: any) => {
+        this.dataSource.data = response.data.element;
+        this.totalCount = response.data.totalCount;
+      });
   }
 
-  handlePageEvent(event: any){
+  handlePageEvent(event: any) {
     this.pageCount = event.pageSize;
     this.pageNumber = event.pageIndex;
 
     this.GetAll();
+  }
+
+  delete(doctorId: number) {
+    let confirmation = confirm(
+      `Are you sure you want to remove the doctor (ID: ${doctorId})?`
+    );
+
+    if (confirmation) {
+      let ids = [doctorId];
+
+      this.httpService.Delete(ids).subscribe((response: any) => {
+        this.toastr.success('Doctor removed succesfully','Confirmation')
+        
+        this.GetAll();
+      });
+    }
   }
 }
