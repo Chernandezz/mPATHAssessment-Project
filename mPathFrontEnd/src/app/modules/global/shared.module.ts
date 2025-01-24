@@ -5,6 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +18,11 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FormsModule,
   ],
   exports: [
     MatButtonModule,
@@ -19,6 +30,11 @@ import { RouterModule } from '@angular/router';
     MatToolbarModule,
     MatCardModule,
     RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FormsModule,
   ],
 })
 export class SharedModule {}
