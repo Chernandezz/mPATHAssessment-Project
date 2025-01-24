@@ -7,8 +7,8 @@ import { HeaderComponent } from "./modules/global/components/header/header.compo
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'mPathFrontEnd';
+  title = 'mPath';
 }
