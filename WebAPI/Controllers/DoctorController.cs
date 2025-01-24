@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Common.ViewModels;
+using Logic.BLL;
 using Model.Models;
 
 namespace WebAPI.Controllers
@@ -13,8 +14,24 @@ namespace WebAPI.Controllers
     {
         public IHttpActionResult GetAll(int count = 10, int page = 0, string searchText = null)
         {
+            var response = new ResponseVMR<PagedListVMR<DoctorVMR>>();
+
+            try
+            {
+                response.data = DoctorBLL.GetAll(count, page, searchText);
+            }
+            catch(Exception e)
+            { 
+                response.code = HttpStatusCode.InternalServerError;
+                response.data = null;
+                response.mesages.Add(e.Message);
+                response.mesages.Add(e.ToString());
+            }
+
+            return Content(response.code, response);
 
         }
+        /*
 
         public IHttpActionResult GetById(long id)
         {
@@ -33,5 +50,6 @@ namespace WebAPI.Controllers
         {
 
         }
+        */
     }
 }
