@@ -4,12 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Common.ViewModels;
 using Logic.BLL;
 using Model.Models;
 
 namespace WebAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class DoctorController : ApiController
     {
 
