@@ -61,7 +61,6 @@ namespace Data.DAL
 
         }
         public static long Create(Doctor item) {
-            long id = 0;
             using (var db = DbConnection.Create())
             {
                 item.deleted = false;
@@ -69,7 +68,7 @@ namespace Data.DAL
                 db.SaveChanges();
 
             }
-            return id;
+            return item.id;
         
         }
         public static void Update(DoctorVMR item) {
