@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +13,12 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatCardModule,
   ],
-  exports: [MatButtonModule, MatIconModule, MatToolbarModule, MatCardModule],
+  exports: [
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    RouterModule,
+  ],
 })
 export class SharedModule {}
