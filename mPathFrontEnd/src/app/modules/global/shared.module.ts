@@ -10,6 +10,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   imports: [
@@ -23,6 +26,12 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatPaginatorModule,
     FormsModule,
+    MatTooltipModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      progressBar: true,
+      enableHtml: true,
+    }),
   ],
   exports: [
     MatButtonModule,
@@ -35,6 +44,8 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatPaginatorModule,
     FormsModule,
+    MatTooltipModule,
+    ToastrModule,
   ],
 })
 export class SharedModule {}
