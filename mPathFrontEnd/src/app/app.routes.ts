@@ -5,6 +5,6 @@ export const routes: Routes = [
   {
     path: '',
     component: HeaderComponent,
-    loadChildren: () => import('./routes.module').then((m) => m.RoutesModule),
-  },
+    loadChildren: () => import('./routes.module').then(m => m.RoutesModule)
+  }
 ];
