@@ -12,6 +12,9 @@ namespace WebAPI.Controllers
 {
     public class DoctorController : ApiController
     {
+
+        [HttpGet]
+
         public IHttpActionResult GetAll(int count = 10, int page = 0, string searchText = null)
         {
             var response = new ResponseVMR<PagedListVMR<DoctorVMR>>();
