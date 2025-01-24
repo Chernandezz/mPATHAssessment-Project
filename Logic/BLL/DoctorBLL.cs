@@ -27,11 +27,11 @@ namespace Logic.BLL
         }
         public static void Update(DoctorVMR item)
         {
-            return;
+            DoctorDAL.Update(item);
         }
         public static void Delete(List<long> ids)
         {
-            return;
+            DoctorDAL.Delete(ids);
         }
     }
 }
