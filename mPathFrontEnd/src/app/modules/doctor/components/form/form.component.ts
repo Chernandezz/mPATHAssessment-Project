@@ -25,7 +25,7 @@ export class FormComponent implements OnInit {
   }
 
   cancel() {
-    this.dialogRef.close();
+    this.dialogRef.close(false);
   }
   
   save() {

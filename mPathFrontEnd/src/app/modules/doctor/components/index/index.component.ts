@@ -85,8 +85,10 @@ export class IndexComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.toastr.success('Doctor created succesfully', 'Confirmation');
-      this.GetAll();
+      if(result !== false){
+        this.toastr.success('Doctor created succesfully', 'Confirmation');
+        this.GetAll();
+      }
     });
   }
 }

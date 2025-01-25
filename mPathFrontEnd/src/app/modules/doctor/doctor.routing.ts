@@ -3,7 +3,7 @@ import { IndexComponent } from './components/index/index.component';
 
 export const doctorRoutes: Routes = [
   {
-    path: 'doctor/index',
+    path: 'doctor',
     component: IndexComponent,
   },
 ];
