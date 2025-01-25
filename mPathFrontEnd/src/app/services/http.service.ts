@@ -31,4 +31,20 @@ export class HttpService{
 
     return this.httpClient.delete('http://localhost:54756/api/Doctor', option);
   }
+
+  Create(id: number, firstName:string, lastName: string, active:boolean, email:string){
+    const body = {
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      active: active,
+      email: email,
+    };
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+      });
+      return this.httpClient.post('http://localhost:54756/api/Doctor', body, {
+        headers: headers,
+      });
+  }
 }

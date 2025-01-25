@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../../global/shared.module';
 import { HttpService } from '../../../../services/http.service';
 import { MatTableDataSource } from '@angular/material/table';
-import {  ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
 
@@ -14,7 +14,6 @@ import { FormComponent } from '../form/form.component';
   styleUrl: './index.component.scss',
 })
 export class IndexComponent implements OnInit {
-  
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -31,7 +30,11 @@ export class IndexComponent implements OnInit {
 
   searchText = '';
 
-  constructor(private httpService: HttpService, private toastr: ToastrService, public dialog: MatDialog) {}
+  constructor(
+    private httpService: HttpService,
+    private toastr: ToastrService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.GetAll();
@@ -62,27 +65,28 @@ export class IndexComponent implements OnInit {
       let ids = [doctorId];
 
       this.httpService.Delete(ids).subscribe((response: any) => {
-        this.toastr.success('Doctor removed succesfully','Confirmation')
-        
+        this.toastr.success('Doctor removed succesfully', 'Confirmation');
+
         this.GetAll();
       });
     }
   }
 
-  createDoctor(){
+  createDoctor() {
     const dialogRef = this.dialog.open(FormComponent, {
       disableClose: true,
       autoFocus: true,
       closeOnNavigation: false,
-      position: { top: '30px'},
+      position: { top: '30px' },
       width: '700px',
       data: {
-        type: 'Create'
-      }
+        type: 'Create',
+      },
     });
 
-    dialogRef.afterClosed().subscribe((result) => { //Observable
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe((result) => {
+      this.toastr.success('Doctor created succesfully', 'Confirmation');
+      this.GetAll();
     });
   }
 }
