@@ -9,10 +9,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ToastrModule } from 'ngx-toastr';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -32,6 +33,9 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
       enableHtml: true,
     }),
+    MatDialogModule,
+    MatRadioModule,
+    ReactiveFormsModule,
   ],
   exports: [
     MatButtonModule,
@@ -46,6 +50,10 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     MatTooltipModule,
     ToastrModule,
+    MatDialogModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    CommonModule,
   ],
 })
 export class SharedModule {}
