@@ -3,6 +3,8 @@ import { SharedModule } from '../../../global/shared.module';
 import { HttpService } from '../../../../services/http.service';
 import { MatTableDataSource } from '@angular/material/table';
 import {  ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-index',
@@ -12,6 +14,7 @@ import {  ToastrService } from 'ngx-toastr';
   styleUrl: './index.component.scss',
 })
 export class IndexComponent implements OnInit {
+  
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -28,7 +31,7 @@ export class IndexComponent implements OnInit {
 
   searchText = '';
 
-  constructor(private httpService: HttpService, private toastr: ToastrService) {}
+  constructor(private httpService: HttpService, private toastr: ToastrService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.GetAll();
@@ -64,5 +67,22 @@ export class IndexComponent implements OnInit {
         this.GetAll();
       });
     }
+  }
+
+  createDoctor(){
+    const dialogRef = this.dialog.open(FormComponent, {
+      disableClose: true,
+      autoFocus: true,
+      closeOnNavigation: false,
+      position: { top: '30px'},
+      width: '700px',
+      data: {
+        type: 'Create'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((result) => { //Observable
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
