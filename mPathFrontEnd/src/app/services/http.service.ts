@@ -13,12 +13,14 @@ export class HttpService{
 
   }
 
-  GetAll(count: number, page: number, searchText: string){
+  GetAll(count: number, page: number, searchText: string, route: string){
     let params = new HttpParams();
     params = params.append('count', count)
     params = params.append('page', page)
     params = params.append('searchText', searchText)
-    return this.httpClient.get('http://localhost:54756/api/Doctor', {params: params});
+    return this.httpClient.get(`http://localhost:54756/api/${route}`, {
+      params: params,
+    });
   }
 
   Delete(ids: number[]){
