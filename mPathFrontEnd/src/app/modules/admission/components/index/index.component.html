@@ -21,71 +21,70 @@
 <div class="container-fluid my-3">
   <div class="row">
     <div class="col">
-      <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
+      <div class="mat-elevation-z8 rounded">
+        <table mat-table [dataSource]="dataSource" class="custom-table">
 
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-
-          <!-- Position Column -->
+          <!-- Admission Id Column -->
           <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef> Admission Id </th>
-            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Admission Id </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{ element.id }} </td>
           </ng-container>
 
-          <!-- Name Column -->
+          <!-- Patient Name Column -->
           <ng-container matColumnDef="patientName">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientName}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Name </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{ element.patientName }} </td>
           </ng-container>
 
-          <!-- Name Column -->
+          <!-- Admission Date Column -->
           <ng-container matColumnDef="admissionDate">
-            <th mat-header-cell *matHeaderCellDef> Admission Date </th>
-            <td mat-cell *matCellDef="let element"> {{element.admissionDate}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Admission Date </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{ element.admissionDate | date:'MMM dd, yyyy'
+              }} </td>
           </ng-container>
 
-          <!-- Weight Column -->
+          <!-- Diagnosis Column -->
           <ng-container matColumnDef="diagnosis">
-            <th mat-header-cell *matHeaderCellDef> Diagnosis </th>
-            <td mat-cell *matCellDef="let element"> {{element.diagnosis}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Diagnosis </th>
+            <td mat-cell *matCellDef="let element" class="text-truncate"> {{ element.diagnosis }} </td>
           </ng-container>
 
-          <!-- Name Column -->
+          <!-- Observation Column -->
           <ng-container matColumnDef="observation">
-            <th mat-header-cell *matHeaderCellDef> Observation </th>
-            <td mat-cell *matCellDef="let element"> {{element.observation}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Observation </th>
+            <td mat-cell *matCellDef="let element" class="text-truncate"> {{ element.observation }} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Doctor Id Column -->
           <ng-container matColumnDef="doctorId">
-            <th mat-header-cell *matHeaderCellDef> Doctor Id </th>
-            <td mat-cell *matCellDef="let element"> {{element.doctorId}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Doctor Id </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{ element.doctorId }} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Patient Id Column -->
           <ng-container matColumnDef="patientId">
-            <th mat-header-cell *matHeaderCellDef> Patient Id </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientId}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Patient Id </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{ element.patientId }} </td>
           </ng-container>
 
           <!-- Actions Column -->
           <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
-            <td mat-cell *matCellDef="let element">
-              <button  mat-icon-button color="warn" arial-label="">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Actions </th>
+            <td mat-cell *matCellDef="let element" class="text-center">
+              <button mat-icon-button color="warn" aria-label="Delete">
                 <mat-icon>delete</mat-icon>
               </button>
             </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDetails(row)" class="row-click"></tr>
 
-          <tr class="mat-row" *matNoDataRow="">
-            <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+
+          <tr class="mat-row no-data" *matNoDataRow>
+            <td class="mat-cell text-center" [attr.colspan]="displayedColumns.length">
               <div class="messageNoData">
-                <mat-icon class="mx-3">error</mat-icon>No records found
+                <mat-icon class="mx-3">error</mat-icon> No records found
               </div>
             </td>
           </tr>
@@ -97,8 +96,6 @@
           aria-label="Select page">
         </mat-paginator>
       </div>
-
-
     </div>
   </div>
 </div>

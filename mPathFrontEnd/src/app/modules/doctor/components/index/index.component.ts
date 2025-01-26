@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
+import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
 
 @Component({
   selector: 'app-index',
@@ -30,6 +31,12 @@ export class IndexComponent implements OnInit {
 
   searchText = '';
 
+  openDetails(row: any) {
+    this.dialog.open(DetailsDialogComponent, {
+      data: row,
+      width: '500px',
+    });
+  }
   constructor(
     private httpService: HttpService,
     private toastr: ToastrService,
@@ -85,7 +92,7 @@ export class IndexComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if(result !== false){
+      if (result !== false) {
         this.toastr.success('Doctor created succesfully', 'Confirmation');
         this.GetAll();
       }

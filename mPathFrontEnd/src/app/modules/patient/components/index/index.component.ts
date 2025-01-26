@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
+import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
 
 @Component({
   selector: 'app-index',
@@ -60,6 +61,12 @@ export class IndexComponent {
 
     this.GetAll();
   }
+  openDetails(row: any) {
+      this.dialog.open(DetailsDialogComponent, {
+        data: row,
+        width: '500px',
+      });
+    }
 
   delete(patientId: number) {
     let confirmation = confirm(
