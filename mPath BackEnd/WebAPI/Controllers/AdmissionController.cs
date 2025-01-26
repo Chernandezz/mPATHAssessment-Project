@@ -34,16 +34,16 @@ namespace WebAPI.Controllers
 
             return Content(response.code, response);
 
-        }/*
+        }
 
         [HttpGet]
         public IHttpActionResult GetById(long id)
         {
-            var response = new ResponseVMR<DoctorVMR>();
+            var response = new ResponseVMR<AdmissionVMR>();
 
             try
             {
-                response.data = DoctorBLL.GetById(id);
+                response.data = AdmissionBLL.GetById(id);
             }
             catch (Exception e)
             {
@@ -63,14 +63,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Create(Doctor item)
+        public IHttpActionResult Create(Admission item)
         {
 
             var response = new ResponseVMR<long?>();
 
             try
             {
-                response.data = DoctorBLL.Create(item);
+                response.data = AdmissionBLL.Create(item);
             }
             catch (Exception e)
             {
@@ -86,14 +86,14 @@ namespace WebAPI.Controllers
 
 
         [HttpPut]
-        public IHttpActionResult Update(long id, DoctorVMR item)
+        public IHttpActionResult Update(long id, AdmissionVMR item)
         {
             var response = new ResponseVMR<bool>();
 
             try
             {
                 item.id = id;
-                DoctorBLL.Update(item);
+                AdmissionBLL.Update(item);
                 response.data = true;
             }
             catch (Exception e)
@@ -107,7 +107,7 @@ namespace WebAPI.Controllers
             return Content(response.code, response);
 
         }
-
+        /*
         [HttpDelete]
         public IHttpActionResult Delete(List<long> ids)
         {
