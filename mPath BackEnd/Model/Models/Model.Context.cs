@@ -29,5 +29,6 @@ namespace Model.Models
         public virtual DbSet<Discharge> Discharge { get; set; }
         public virtual DbSet<Doctor> Doctor { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

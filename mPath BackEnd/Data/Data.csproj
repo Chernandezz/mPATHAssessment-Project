@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AdmissionDAL.cs" />
+    <Compile Include="DAL\AuthDAL.cs" />
     <Compile Include="DAL\DischargeDAL.cs" />
     <Compile Include="DAL\DoctorDAL.cs" />
     <Compile Include="DAL\PatientDAL.cs" />

@@ -13,6 +13,7 @@
         <AssociationConnector Association="Model.FK_Admission_Patient" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Discharge_Admission" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Discharge_Doctor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
