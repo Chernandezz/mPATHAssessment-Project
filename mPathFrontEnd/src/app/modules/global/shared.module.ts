@@ -14,6 +14,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatOption } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -36,6 +40,10 @@ import { MatRadioModule } from '@angular/material/radio';
     MatDialogModule,
     MatRadioModule,
     ReactiveFormsModule,
+    MatOption,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
   exports: [
     MatButtonModule,
@@ -54,6 +62,10 @@ import { MatRadioModule } from '@angular/material/radio';
     MatRadioModule,
     ReactiveFormsModule,
     CommonModule,
+    MatOption,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
 })
 export class SharedModule {}

@@ -34,7 +34,7 @@ export class FormComponent implements OnInit {
 
       // Llama al método Create del HttpService
       this.httpService
-        .Create(
+        .CreateDoctor(
           formData.id, // Si el formulario tiene un campo "id"
           formData.firstName,
           formData.lastName,

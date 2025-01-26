@@ -3,38 +3,39 @@ import { Injectable } from "@angular/core";
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class HttpService{
+export class HttpService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(
-    private httpClient: HttpClient
-  ){
-
-  }
-
-  GetAll(count: number, page: number, searchText: string, route: string){
+  GetAll(count: number, page: number, searchText: string, route: string) {
     let params = new HttpParams();
-    params = params.append('count', count)
-    params = params.append('page', page)
-    params = params.append('searchText', searchText)
+    params = params.append('count', count);
+    params = params.append('page', page);
+    params = params.append('searchText', searchText);
     return this.httpClient.get(`http://localhost:54756/api/${route}`, {
       params: params,
     });
   }
 
-  Delete(ids: number[]){
+  Delete(ids: number[]) {
     const option = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }),
-      body: ids
+      body: ids,
     };
 
     return this.httpClient.delete('http://localhost:54756/api/Doctor', option);
   }
 
-  Create(id: number, firstName:string, lastName: string, active:boolean, email:string){
+  CreateDoctor(
+    id: number,
+    firstName: string,
+    lastName: string,
+    active: boolean,
+    email: string
+  ) {
     const body = {
       id: id,
       firstName: firstName,
@@ -42,11 +43,35 @@ export class HttpService{
       active: active,
       email: email,
     };
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-      });
-      return this.httpClient.post('http://localhost:54756/api/Doctor', body, {
-        headers: headers,
-      });
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.httpClient.post('http://localhost:54756/api/Doctor', body, {
+      headers: headers,
+    });
+  }
+
+  CreateAdmission(
+    patientId: number,
+    doctorId: number,
+    admissionDate: string,
+    diagnosis: string,
+    observation: string
+  ) {
+    const body = {
+      patientId: patientId,
+      doctorId: doctorId,
+      admissionDate: admissionDate,
+      diagnosis: diagnosis,
+      observation: observation,
+    };
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.httpClient.post('http://localhost:54756/api/Admission', body, {
+      headers: headers,
+    });
   }
 }

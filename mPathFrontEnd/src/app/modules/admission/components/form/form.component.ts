@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { SharedModule } from '../../../global/shared.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../../../../services/http.service';
-import { IndexComponent } from '../index/index.component';
+import { SharedModule } from '../../../global/shared.module';
+
 
 @Component({
   selector: 'app-form',
@@ -12,16 +12,45 @@ import { IndexComponent } from '../index/index.component';
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
+
 export class FormComponent implements OnInit {
   formGroup!: FormGroup;
+  doctors: any[] = []; // Lista de doctores para el dropdown
+  patients: any[] = []; // Lista de pacientes para el dropdown
 
   readonly dialogRef = inject(MatDialogRef<FormComponent>);
   data = inject(MAT_DIALOG_DATA);
 
-  constructor(private httpService: HttpService, private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private httpService: HttpService) {}
 
   ngOnInit(): void {
     this.initForm();
+    this.loadDoctors();
+    this.loadPatients();
+  }
+
+  initForm() {
+    this.formGroup = this.fb.group({
+      patientId: [null, [Validators.required]],
+      doctorId: [null, [Validators.required]],
+      admissionDate: [null, [Validators.required]],
+      diagnosis: ['', [Validators.required]],
+      observation: ['', [Validators.required]],
+    });
+  }
+
+  loadDoctors() {
+    this.httpService.GetAll(100, 0, '', 'Doctor').subscribe((response: any) => {
+      this.doctors = response.data.element;
+    });
+  }
+
+  loadPatients() {
+    this.httpService.GetAll(100, 0, '', 'Patient').subscribe((response: any) => {
+      console.log(response.data.element);
+      
+      this.patients = response.data.element;
+    });
   }
 
   cancel() {
@@ -31,24 +60,9 @@ export class FormComponent implements OnInit {
   save() {
     if (this.formGroup.valid) {
       const formData = this.formGroup.value;
-
-      // Llama al método Create del HttpService
-      this.httpService
-        .Create(
-          formData.id, // Si el formulario tiene un campo "id"
-          formData.firstName,
-          formData.lastName,
-          formData.active,
-          formData.email
-        )
-        .subscribe({
-          next: (response: any) => {
-            this.dialogRef.close(formData); // Cierra el diálogo después de enviar
-          },
-          error: (error: any) => {
-            console.error('Error sending data to backend:', error);
-          },
-        });
+      this.httpService.CreateAdmission(formData.patientId, formData.doctorId, formData.admissionDate, formData.diagnosis, formData.observation).subscribe(() => {
+        this.dialogRef.close(true);
+      });
     } else {
       this.markFormGroupTouched(this.formGroup);
     }
@@ -56,20 +70,11 @@ export class FormComponent implements OnInit {
 
   markFormGroupTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach((control) => {
-      control.markAsTouched();
-
       if (control instanceof FormGroup) {
         this.markFormGroupTouched(control);
+      } else {
+        control.markAsTouched();
       }
-    });
-  }
-
-  initForm() {
-    this.formGroup = this.fb.group({
-      firstName: [{ value: '', disabled: false }, [Validators.required]],
-      lastName: [{ value: '', disabled: false }, [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      active: [true, [Validators.required]],
     });
   }
 }

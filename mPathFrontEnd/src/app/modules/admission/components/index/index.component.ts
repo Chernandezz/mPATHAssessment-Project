@@ -62,23 +62,8 @@ export class IndexComponent implements OnInit {
       this.GetAll();
     }
   
-    delete(doctorId: number) {
-      let confirmation = confirm(
-        `Are you sure you want to remove the doctor (ID: ${doctorId})?`
-      );
   
-      if (confirmation) {
-        let ids = [doctorId];
-  
-        this.httpService.Delete(ids).subscribe((response: any) => {
-          this.toastr.success('Doctor removed succesfully', 'Confirmation');
-  
-          this.GetAll();
-        });
-      }
-    }
-  
-    createDoctor() {
+    createAdmission() {
       const dialogRef = this.dialog.open(FormComponent, {
         disableClose: true,
         autoFocus: true,
@@ -92,7 +77,7 @@ export class IndexComponent implements OnInit {
   
       dialogRef.afterClosed().subscribe((result) => {
         if(result !== false){
-          this.toastr.success('Doctor created succesfully', 'Confirmation');
+          this.toastr.success('Admission created succesfully', 'Confirmation');
           this.GetAll();
         }
       });
