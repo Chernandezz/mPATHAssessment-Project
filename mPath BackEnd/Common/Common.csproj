@@ -45,6 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AdmissionVMR.cs" />
     <Compile Include="ViewModels\AuthVMR.cs" />
+    <Compile Include="ViewModels\DischargeVMR.cs" />
     <Compile Include="ViewModels\DoctorVMR.cs" />
     <Compile Include="ViewModels\PagedListVMR.cs" />
     <Compile Include="ViewModels\PatientVMR.cs" />
