@@ -11,7 +11,6 @@ using System.Web.Http.Cors;
 
 namespace WebAPI.Controllers
 {
-    [Authorize]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class PatientController : ApiController
     {
