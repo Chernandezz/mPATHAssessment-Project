@@ -4,22 +4,24 @@ using System.Web.Http;
 using Common.ViewModels;
 using Common.Helpers;
 using Logic.BLL;
+using System.Web.Http.Cors;
 
 namespace WebAPI.Controllers
 {
     [RoutePrefix("api/auth")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AuthController : ApiController
     {
         [HttpPost]
         [Route("login")]
-        public IHttpActionResult Login(string email, string password)
+        public IHttpActionResult Login([FromBody] LoginRequest loginRequest)
         {
             var response = new ResponseVMR<AuthVMR>();
 
             try
             {
-                var passwordHash = Utils.EncryptPassword(password);
-                var user = AuthBLL.Login(email, passwordHash);
+                var passwordHash = Utils.EncryptPassword(loginRequest.Password);
+                var user = AuthBLL.Login(loginRequest.Email, passwordHash);
 
                 if (user == null)
                 {
@@ -39,6 +41,11 @@ namespace WebAPI.Controllers
             return Content(response.code, response);
         }
 
+        public class LoginRequest
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
+        }
         [HttpPost]
         [Route("register")]
         public IHttpActionResult Register(string email, string password, string role)
